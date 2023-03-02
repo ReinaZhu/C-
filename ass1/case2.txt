@@ -1,0 +1,10 @@
+The first city:Shenzhen
+The latitude and longitude of first city,separates by a space:22.55 114.1
+The second city:New York
+The latitude and longitude of second city,separates by a space:40.7127 -74.0059
+The distance between Shenzhen and New York is 12930.8km.
+
+
+
+
+

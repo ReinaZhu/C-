@@ -1,0 +1,5 @@
+The first city:Beijing
+The latitude and longitude of first city,separates by a space:39.9139  116.3917
+The second city:Shenzhen
+The latitude and longitude of second city,separates by a space:22.55 114.1
+The distance between Beijing and Shenzhen is 1942.84km.

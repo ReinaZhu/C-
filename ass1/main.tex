@@ -1,0 +1,152 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Wenneker Assignment
+% LaTeX Template
+% Version 2.0 (12/1/2019)
+%
+% This template originates from:
+% http://www.LaTeXTemplates.com
+%
+% Authors:
+% Vel (vel@LaTeXTemplates.com)
+% Frits Wenneker
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt]{scrartcl} % Font size
+
+\input{structure.tex} % Include the file specifying the document structure and custom commands
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\title{	
+	\normalfont\normalsize
+	\textsc{Southern University of Science and Technology}\\ % Your university, school and/or department name(s)
+	\vspace{25pt} % Whitespace
+	\rule{\linewidth}{0.5pt}\\ % Thin top horizontal rule
+	\vspace{20pt} % Whitespace
+	{\huge C/C++ Programming Language assignment 1}\\ % The assignment title
+	\vspace{12pt} % Whitespace
+	\rule{\linewidth}{2pt}\\ % Thick bottom horizontal rule
+	\vspace{12pt} % Whitespace
+}
+
+\author{\LARGE Zhu Yujie 11712940} % Your name
+
+\date{\normalsize\today} % Today's date (\today) or a custom date
+
+\begin{document}
+\noindent
+
+\maketitle % Print the title
+
+%----------------------------------------------------------------------------------------
+%	FIGURE EXAMPLE
+%----------------------------------------------------------------------------------------
+
+\section{Analysis}
+
+    The problem is to calculate the distance between two places by their latitude and longitude. As we all know that the radius of earth is 6371 km, assume earth is a perfect sphere, we could use latitude and longitude to calculate the angle. Firstly, compute $\phi$:
+    \par
+    \centerline{\large $\phi$=(90-latitude)$\times$ $\pi$ $\div$180}
+    \par Where latitude is in angle.
+    \par And let longitude be in radian too.
+    \par
+    \centerline{\large $\theta$=longitude$\times$ $\pi$ $\div$180}
+    \par Where longitude is also in angle.
+    \par
+    Using the following formula could compute the shortest distance between the two places.
+    \par
+    \centerline{\large $c$=$\sin$($\phi$ $_1$)$\times$ $\sin$($\phi$ $_2$)$\times$ $\cos$($\theta$ $_1$ - $\theta$ $_2$)+$\cos$ ($\phi$ $_1$)$\times$ $\cos$ ($\phi$ $_2$)  }
+    \centerline{\large $d$=R$\times$ $\arccos$($c$)}
+    \par Where R is the radius of earth that is R = 6371 km.
+
+
+
+%------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	TEXT EXAMPLE
+%----------------------------------------------------------------------------------------
+
+\section{Code}
+\lstinputlisting[
+	caption=Assignment 1., % Caption above the listing
+	frame=single, % Frame around the code listing
+	showstringspaces=false, % Don't put marks in string spaces
+	numbers=left, % Line numbers on left
+	numberstyle=\tiny, % Line numbers styling
+	]{assignment1.cpp}
+\vspace{20pt}
+
+%\begin{figure}[htb] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
+%	\centering
+%	\includegraphics[width=150mm]{code.jpg} % Example image
+%	\caption{code.}
+%\end{figure}
+
+%------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	EQUATION EXAMPLES
+%----------------------------------------------------------------------------------------
+\newpage
+\section{ Result $\&$ Verification}
+
+\vspace{20pt}
+
+{Test case $\#$1:}
+\lstinputlisting[
+	caption=Test1., % Caption above the listing
+	frame=single, % Frame around the code listing
+	showstringspaces=false, % Don't put marks in string spaces
+	numbers=left, % Line numbers on left
+	numberstyle=\tiny, % Line numbers styling
+	]{case1.txt}
+\vspace{20pt}
+\begin{figure}[htb] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
+	\centering
+	\includegraphics[width=100mm]{case11.png} % Example image
+	\caption{test1.}
+\end{figure}
+\vspace{20pt}
+{Test case $\#$2:}
+\lstinputlisting[
+	caption=Test2., % Caption above the listing
+	frame=single, % Frame around the code listing
+	showstringspaces=false, % Don't put marks in string spaces
+	numbers=left, % Line numbers on left
+	numberstyle=\tiny, % Line numbers styling
+	]{case2.txt}
+\vspace{20pt}
+\begin{figure}[htb] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
+	\centering
+	\includegraphics[width=100mm]{case22.png} % Example image
+	\caption{test2.}
+\end{figure}
+
+
+
+
+
+
+\section{Difficulties $\&$ Solutions}
+\begin{enumerate}
+  \item To understand what the formula and model means.
+  \item To handle unexpected input, without reporting error and ask user to input again.
+  \item Some cities’ names contain two or more words but store in one variable.
+\end{enumerate}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
